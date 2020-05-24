@@ -1,2 +1,3 @@
 # Spoon
-Spoon - Source Code Analysis using Java
+Spoon - source code parsing for java
+Documentation : http://spoon.gforge.inria.fr/
