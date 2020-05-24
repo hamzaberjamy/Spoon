@@ -1,2 +1,2 @@
 # Spoon
-Spoon - Source Code Analysis for Java
+Spoon - Source Code Analysis using Java
