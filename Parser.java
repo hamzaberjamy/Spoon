@@ -9,24 +9,24 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Launcher launcher = new Launcher(); // Instance du Launcher
-		launcher.addInputResource("C:\\Users\\user\\Desktop\\Personne.java"); // Spécification du path de la classe à analyser
+		Launcher launcher = new Launcher(); // Launcher instance
+		launcher.addInputResource("C:\\Users\\user\\Desktop\\Personne.java"); // path of class to parse
 
-		launcher.buildModel(); // Génération du méta-modèle
-		CtModel model = launcher.getModel(); // Récupération du métaèmodèle
+		launcher.buildModel(); // meta-model generation
+		CtModel model = launcher.getModel(); // get meta-model
 		
-		List<CtField> fields = model.getElements(new TypeFilter<>(CtField.class)); // Récupérer la liste des attributs
-		List<CtMethod> methods = model.getElements(new TypeFilter<>(CtMethod.class)); // Récupérer la liste des méthodes
+		List<CtField> fields = model.getElements(new TypeFilter<>(CtField.class)); // get class attributes list
+		List<CtMethod> methods = model.getElements(new TypeFilter<>(CtMethod.class)); // get class methods list
 		
 		System.out.println("La liste des attributs de la classe analysée :");
 		for (CtField field : fields) {
-			System.out.println(field.getSimpleName()); // Afficher la liste des attributs
+			System.out.println(field.getSimpleName()); // display class attributes list
 		}
 		
 		System.out.println("La liste des méthodes avec leur type de retour de la classe analysée :");
 		for (CtMethod method : methods) {
-			// Afficher la liste des méthodes avec leurs types respectifs
-			System.out.println("le nom de la méthode : "+method.getSimpleName()+", le type de retour : "+method.getType());
+			// display class methods list : name & return value type
+			System.out.println("Method name : "+method.getSimpleName()+", Return value type : "+method.getType());
 
 		}
 
